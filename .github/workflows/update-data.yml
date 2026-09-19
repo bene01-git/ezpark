@@ -1,0 +1,63 @@
+name: Refresh data and deploy
+
+# GitHub Pages can't run Python at request time, so Python runs HERE instead:
+# on a schedule and on every push it fetches/scrapes, rebuilds the static
+# bundle, then publishes the site/ folder to Pages.
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Daily at 11:00 UTC (~6-7 a.m. Eastern) refreshes the sold-out list.
+    - cron: "0 11 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: pytest -q
+
+      - name: Refresh OpenStreetMap geometry (weekly-ish, tolerant of failure)
+        run: python scripts/fetch_osm.py || echo "OSM fetch skipped"
+
+      - name: Refresh sold-out list (tolerant of failure)
+        run: python scripts/scrape_soldout.py || echo "Scrape skipped"
+
+      - name: Build static bundle
+        run: python scripts/build_site.py
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
