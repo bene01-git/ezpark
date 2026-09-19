@@ -11,7 +11,7 @@ week, and Dome/event restrictions.
 > is *open to you* at a given moment. Always confirm with
 > [Parking & Transportation Services](https://parking.syr.edu).
 
-## How it's built (and why it's all on GitHub)
+## How it's built, and why only GitHub
 
 GitHub Pages only serves static files — it can't run Python when someone visits.
 So Python runs in **GitHub Actions** instead: on a schedule and on every push it
