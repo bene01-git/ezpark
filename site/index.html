@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Can I park at SU right now?</title>
+  <meta name="description" content="A rules-based tool for whether you can park in Syracuse University lots and garages right now, based on your permit, the time, and Dome events." />
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="bar">
+    <div class="bar__head">
+      <h1 class="bar__title">Can I park at SU right now?</h1>
+      <time id="clock" class="bar__clock" aria-live="polite">—</time>
+    </div>
+
+    <div class="permit" role="group" aria-label="Choose your permit type">
+      <span class="permit__label">I have a</span>
+      <div id="permit-picker" class="permit__options"></div>
+    </div>
+
+    <p id="tally" class="tally">Loading parking data…</p>
+  </header>
+
+  <main class="layout">
+    <div id="map" class="map" aria-label="Map of Syracuse University parking"></div>
+
+    <section class="list" aria-label="Parking lots">
+      <div class="legend" id="legend"></div>
+      <ul id="lot-list" class="lot-list"></ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>
+      Access rules only — this does <strong>not</strong> show live open spaces
+      (SU publishes no such feed). Rules are simplified and may be out of date.
+      Always confirm with
+      <a href="https://parking.syr.edu" rel="noopener">Parking &amp; Transportation Services</a>.
+    </p>
+    <p id="freshness" class="foot__meta"></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="app.js"></script>
+</body>
+</html>

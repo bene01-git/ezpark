@@ -1,0 +1,21 @@
+{
+  "_about": "Dome/event windows during which dome_restricted lots are closed or redirected. Maintain by hand or extend scripts/ to scrape the athletics schedule. Times are local (America/New_York), ISO 8601.",
+  "_source": "https://parking.syr.edu/about/parking-and-transit-news/ and https://cuse.com",
+  "events": [
+    {
+      "name": "Football vs New Hampshire",
+      "restriction_start": "2026-09-05T09:00:00",
+      "restriction_end": "2026-09-05T16:30:00"
+    },
+    {
+      "name": "Football vs Colgate (Friday night)",
+      "restriction_start": "2025-09-12T15:30:00",
+      "restriction_end": "2025-09-12T23:30:00"
+    },
+    {
+      "name": "Football vs North Carolina (Friday night)",
+      "restriction_start": "2025-10-31T15:30:00",
+      "restriction_end": "2025-10-31T23:59:00"
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+:root {
+  /* Grounded in Syracuse University's own palette. Otto Orange doubles as the
+     "Orange lot" concept and the go/open signal. */
+  --orange: #f76900;   /* open to you now */
+  --amber:  #b06a12;   /* permit required  */
+  --red:    #a5232c;   /* restricted (event) */
+  --slate:  #7b828c;   /* not available to you */
+  --navy:   #0a2240;   /* SU secondary, used for chrome */
+
+  --ink:    #1b1a18;
+  --muted:  #5d626b;
+  --line:   #d8dbe0;
+  --panel:  #ffffff;
+  --app-bg: #e9ebee;   /* cool light grey, deliberately not cream */
+
+  --shadow: 0 1px 2px rgba(16, 22, 33, 0.08);
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: "Archivo", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: var(--app-bg);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.45;
+}
+
+/* ---- header / control bar ---- */
+.bar {
+  background: var(--navy);
+  color: #fff;
+  padding: 14px clamp(14px, 4vw, 28px) 16px;
+}
+
+.bar__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.bar__title {
+  font-size: clamp(1.15rem, 3.2vw, 1.6rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.bar__clock {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  color: #c7d2e2;
+  font-size: 0.95rem;
+}
+
+.permit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.permit__label {
+  color: #aebbcf;
+  font-size: 0.9rem;
+}
+
+.permit__options { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.permit__btn {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: transparent;
+  color: #e7ecf3;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+
+.permit__btn:hover { border-color: #fff; }
+
+.permit__btn[aria-pressed="true"] {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #1b1a18;
+  font-weight: 600;
+}
+
+.permit__btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.tally {
+  margin: 12px 0 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.tally b { color: var(--orange); }
+
+/* ---- main layout ---- */
+.layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  min-height: 0;
+}
+
+.map { min-height: 340px; height: 100%; background: #dfe3e8; }
+
+.list {
+  background: var(--app-bg);
+  overflow-y: auto;
+  padding: 14px clamp(12px, 2vw, 18px);
+}
+
+/* ---- legend ---- */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.dot { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+.dot--open { background: var(--orange); }
+.dot--permit_only { background: var(--amber); }
+.dot--restricted { background: var(--red); }
+.dot--closed { background: var(--slate); }
+
+/* ---- lot list ---- */
+.lot-list { list-style: none; margin: 0; padding: 0; }
+
+.lot {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--slate);
+  border-radius: var(--radius);
+  padding: 11px 13px;
+  margin-bottom: 9px;
+  box-shadow: var(--shadow);
+}
+.lot--open { border-left-color: var(--orange); }
+.lot--permit_only { border-left-color: var(--amber); }
+.lot--restricted { border-left-color: var(--red); }
+.lot--closed { border-left-color: var(--slate); }
+
+.lot__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.lot__name { font-weight: 600; font-size: 1rem; }
+.lot__type { color: var(--muted); font-size: 0.78rem; font-weight: 500; }
+
+.lot__status {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.lot__status--open { background: #ffe7d4; color: #9a4200; }
+.lot__status--permit_only { background: #f3e6cf; color: #6d4409; }
+.lot__status--restricted { background: #f6dcde; color: #7c1a20; }
+.lot__status--closed { background: #e6e8ec; color: #4b5158; }
+
+.lot__reason { margin: 5px 0 0; color: var(--muted); font-size: 0.86rem; }
+
+.lot__flag {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--red);
+}
+
+/* ---- footer ---- */
+.foot {
+  background: #f5f6f8;
+  border-top: 1px solid var(--line);
+  padding: 12px clamp(14px, 4vw, 28px);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.foot p { margin: 3px 0; }
+.foot a { color: var(--navy); }
+.foot__meta { font-variant-numeric: tabular-nums; }
+
+/* ---- map popups ---- */
+.leaflet-popup-content { font-family: inherit; margin: 10px 12px; }
+.pop__name { font-weight: 700; }
+.pop__status { font-weight: 600; margin-top: 2px; }
+.pop__reason { color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
+
+/* ---- responsive ---- */
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; }
+  .map { height: 52vh; min-height: 300px; }
+  .list { max-height: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

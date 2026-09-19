@@ -1,0 +1,188 @@
+{
+  "_about": "Access rules for Syracuse University parking, compiled from https://parking.syr.edu. Coordinates are APPROXIMATE seeds; run scripts/fetch_osm.py to replace geometry with OpenStreetMap data. Rules are a simplified model of official policy and may be out of date - always verify with Parking and Transportation Services.",
+  "_source": "https://parking.syr.edu",
+  "permits": [
+    { "id": "visitor", "label": "Visitor / no SU permit" },
+    { "id": "commuter", "label": "Commuter student" },
+    { "id": "resident_undergrad", "label": "Resident undergrad" },
+    { "id": "resident_grad", "label": "Graduate student" },
+    { "id": "faculty_staff", "label": "Faculty / staff" }
+  ],
+  "lots": [
+    {
+      "id": "university_ave_garage",
+      "name": "University Ave Garage",
+      "type": "garage",
+      "category": "public",
+      "lat": 43.0400, "lon": -76.1360,
+      "permits": ["resident_grad", "faculty_staff", "commuter"],
+      "public_hourly": true,
+      "dome_restricted": false,
+      "notes": "Open to the public for hourly parking. Honored for permits and used as the event-day fallback lot."
+    },
+    {
+      "id": "adams_street_garage",
+      "name": "Adams Street Garage",
+      "type": "garage",
+      "category": "permit",
+      "lat": 43.0405, "lon": -76.1330,
+      "permits": ["faculty_staff", "resident_grad"],
+      "public_hourly": false,
+      "dome_restricted": true,
+      "notes": "Near the JMA Dome; restricted during Dome events."
+    },
+    {
+      "id": "irving_ave_garage",
+      "name": "Irving Ave Garage",
+      "type": "garage",
+      "category": "permit",
+      "lat": 43.0410, "lon": -76.1345,
+      "permits": ["resident_grad", "faculty_staff"],
+      "public_hourly": false,
+      "dome_restricted": false,
+      "notes": "Available to graduate students (except first-year Law) and faculty/staff."
+    },
+    {
+      "id": "lawrinson_garage",
+      "name": "Lawrinson Garage",
+      "type": "garage",
+      "category": "permit",
+      "lat": 43.0380, "lon": -76.1400,
+      "permits": ["resident_grad"],
+      "public_hourly": false,
+      "dome_restricted": false,
+      "notes": "Graduate student option."
+    },
+    {
+      "id": "college_place_lot",
+      "name": "College Place Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0415, "lon": -76.1370,
+      "permits": [],
+      "orange_after": "16:30",
+      "dome_restricted": true,
+      "notes": "Closest Orange lot to main campus. Any valid permit after 4:30 p.m. weekdays / weekends."
+    },
+    {
+      "id": "harrison_lot",
+      "name": "Harrison St Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0395, "lon": -76.1320,
+      "permits": ["commuter"],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "Commuter permit lot; Orange access after 4:30 p.m. weekdays / weekends."
+    },
+    {
+      "id": "henry_lot",
+      "name": "Henry St Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0388, "lon": -76.1315,
+      "permits": ["commuter"],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "Commuter permit lot; Orange access after 4:30 p.m. weekdays / weekends."
+    },
+    {
+      "id": "comstock_ave_lot",
+      "name": "Comstock Ave Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0320, "lon": -76.1300,
+      "permits": ["commuter", "faculty_staff"],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "John A. Lally Athletics Complex (South). Shuttle to main campus."
+    },
+    {
+      "id": "colvin_street_lot",
+      "name": "Colvin Street Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0300, "lon": -76.1310,
+      "permits": ["commuter", "faculty_staff"],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "John A. Lally Athletics Complex (South). Shuttle to main campus."
+    },
+    {
+      "id": "raynor_ave_lot",
+      "name": "Raynor Ave Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0378, "lon": -76.1290,
+      "permits": [],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "Orange lot."
+    },
+    {
+      "id": "standart_west_lot",
+      "name": "Standart West Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0370, "lon": -76.1285,
+      "permits": [],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "Orange lot."
+    },
+    {
+      "id": "womens_building_north_lot",
+      "name": "Women's Building North Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0430, "lon": -76.1385,
+      "permits": [],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "Orange lot."
+    },
+    {
+      "id": "womens_building_south_lot",
+      "name": "Women's Building South Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0425, "lon": -76.1388,
+      "permits": [],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "Orange lot."
+    },
+    {
+      "id": "irving_ave_hill_lot",
+      "name": "Irving Ave Hill Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0420, "lon": -76.1340,
+      "permits": [],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "Orange lot."
+    },
+    {
+      "id": "skytop_lot",
+      "name": "Skytop Lot",
+      "type": "surface",
+      "category": "permit",
+      "lat": 43.0245, "lon": -76.1240,
+      "permits": ["commuter", "faculty_staff", "resident_grad", "resident_undergrad"],
+      "public_hourly": false,
+      "dome_restricted": false,
+      "notes": "Large South Campus lot. Free campus shuttle to main campus (~20 min)."
+    },
+    {
+      "id": "marshall_st_street",
+      "name": "Marshall St / University Ave (street)",
+      "type": "street",
+      "category": "street",
+      "lat": 43.0400, "lon": -76.1372,
+      "permits": [],
+      "dome_restricted": false,
+      "notes": "Metered city street parking. Pay until 6:00 p.m.; winter odd/even rules Nov 1 - Apr 1."
+    }
+  ]
+}

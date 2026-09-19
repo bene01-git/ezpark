@@ -1,0 +1,280 @@
+{
+  "generated_at": "2026-09-19T17:33:40.840055+00:00",
+  "source": "https://parking.syr.edu",
+  "permits": [
+    {
+      "id": "visitor",
+      "label": "Visitor / no SU permit"
+    },
+    {
+      "id": "commuter",
+      "label": "Commuter student"
+    },
+    {
+      "id": "resident_undergrad",
+      "label": "Resident undergrad"
+    },
+    {
+      "id": "resident_grad",
+      "label": "Graduate student"
+    },
+    {
+      "id": "faculty_staff",
+      "label": "Faculty / staff"
+    }
+  ],
+  "lots": [
+    {
+      "id": "university_ave_garage",
+      "name": "University Ave Garage",
+      "type": "garage",
+      "category": "public",
+      "lat": 43.04,
+      "lon": -76.136,
+      "permits": [
+        "resident_grad",
+        "faculty_staff",
+        "commuter"
+      ],
+      "public_hourly": true,
+      "dome_restricted": false,
+      "notes": "Open to the public for hourly parking. Honored for permits and used as the event-day fallback lot.",
+      "sold_out": false
+    },
+    {
+      "id": "adams_street_garage",
+      "name": "Adams Street Garage",
+      "type": "garage",
+      "category": "permit",
+      "lat": 43.0405,
+      "lon": -76.133,
+      "permits": [
+        "faculty_staff",
+        "resident_grad"
+      ],
+      "public_hourly": false,
+      "dome_restricted": true,
+      "notes": "Near the JMA Dome; restricted during Dome events.",
+      "sold_out": false
+    },
+    {
+      "id": "irving_ave_garage",
+      "name": "Irving Ave Garage",
+      "type": "garage",
+      "category": "permit",
+      "lat": 43.041,
+      "lon": -76.1345,
+      "permits": [
+        "resident_grad",
+        "faculty_staff"
+      ],
+      "public_hourly": false,
+      "dome_restricted": false,
+      "notes": "Available to graduate students (except first-year Law) and faculty/staff.",
+      "sold_out": false
+    },
+    {
+      "id": "lawrinson_garage",
+      "name": "Lawrinson Garage",
+      "type": "garage",
+      "category": "permit",
+      "lat": 43.038,
+      "lon": -76.14,
+      "permits": [
+        "resident_grad"
+      ],
+      "public_hourly": false,
+      "dome_restricted": false,
+      "notes": "Graduate student option.",
+      "sold_out": false
+    },
+    {
+      "id": "college_place_lot",
+      "name": "College Place Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0415,
+      "lon": -76.137,
+      "permits": [],
+      "orange_after": "16:30",
+      "dome_restricted": true,
+      "notes": "Closest Orange lot to main campus. Any valid permit after 4:30 p.m. weekdays / weekends.",
+      "sold_out": false
+    },
+    {
+      "id": "harrison_lot",
+      "name": "Harrison St Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0395,
+      "lon": -76.132,
+      "permits": [
+        "commuter"
+      ],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "Commuter permit lot; Orange access after 4:30 p.m. weekdays / weekends.",
+      "sold_out": false
+    },
+    {
+      "id": "henry_lot",
+      "name": "Henry St Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0388,
+      "lon": -76.1315,
+      "permits": [
+        "commuter"
+      ],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "Commuter permit lot; Orange access after 4:30 p.m. weekdays / weekends.",
+      "sold_out": false
+    },
+    {
+      "id": "comstock_ave_lot",
+      "name": "Comstock Ave Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.032,
+      "lon": -76.13,
+      "permits": [
+        "commuter",
+        "faculty_staff"
+      ],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "John A. Lally Athletics Complex (South). Shuttle to main campus.",
+      "sold_out": false
+    },
+    {
+      "id": "colvin_street_lot",
+      "name": "Colvin Street Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.03,
+      "lon": -76.131,
+      "permits": [
+        "commuter",
+        "faculty_staff"
+      ],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "John A. Lally Athletics Complex (South). Shuttle to main campus.",
+      "sold_out": false
+    },
+    {
+      "id": "raynor_ave_lot",
+      "name": "Raynor Ave Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0378,
+      "lon": -76.129,
+      "permits": [],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "Orange lot.",
+      "sold_out": false
+    },
+    {
+      "id": "standart_west_lot",
+      "name": "Standart West Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.037,
+      "lon": -76.1285,
+      "permits": [],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "Orange lot.",
+      "sold_out": false
+    },
+    {
+      "id": "womens_building_north_lot",
+      "name": "Women's Building North Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.043,
+      "lon": -76.1385,
+      "permits": [],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "Orange lot.",
+      "sold_out": false
+    },
+    {
+      "id": "womens_building_south_lot",
+      "name": "Women's Building South Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.0425,
+      "lon": -76.1388,
+      "permits": [],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "Orange lot.",
+      "sold_out": false
+    },
+    {
+      "id": "irving_ave_hill_lot",
+      "name": "Irving Ave Hill Lot",
+      "type": "surface",
+      "category": "orange",
+      "lat": 43.042,
+      "lon": -76.134,
+      "permits": [],
+      "orange_after": "16:30",
+      "dome_restricted": false,
+      "notes": "Orange lot.",
+      "sold_out": false
+    },
+    {
+      "id": "skytop_lot",
+      "name": "Skytop Lot",
+      "type": "surface",
+      "category": "permit",
+      "lat": 43.0245,
+      "lon": -76.124,
+      "permits": [
+        "commuter",
+        "faculty_staff",
+        "resident_grad",
+        "resident_undergrad"
+      ],
+      "public_hourly": false,
+      "dome_restricted": false,
+      "notes": "Large South Campus lot. Free campus shuttle to main campus (~20 min).",
+      "sold_out": false
+    },
+    {
+      "id": "marshall_st_street",
+      "name": "Marshall St / University Ave (street)",
+      "type": "street",
+      "category": "street",
+      "lat": 43.04,
+      "lon": -76.1372,
+      "permits": [],
+      "dome_restricted": false,
+      "notes": "Metered city street parking. Pay until 6:00 p.m.; winter odd/even rules Nov 1 - Apr 1.",
+      "sold_out": false
+    }
+  ],
+  "events": [
+    {
+      "name": "Football vs New Hampshire",
+      "restriction_start": "2026-09-05T09:00:00",
+      "restriction_end": "2026-09-05T16:30:00"
+    },
+    {
+      "name": "Football vs Colgate (Friday night)",
+      "restriction_start": "2025-09-12T15:30:00",
+      "restriction_end": "2025-09-12T23:30:00"
+    },
+    {
+      "name": "Football vs North Carolina (Friday night)",
+      "restriction_start": "2025-10-31T15:30:00",
+      "restriction_end": "2025-10-31T23:59:00"
+    }
+  ],
+  "sold_out_updated": null
+}
