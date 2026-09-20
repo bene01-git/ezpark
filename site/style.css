@@ -224,3 +224,80 @@ body {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+
+/* ---- owner filter (reuses permit button look, lighter) ---- */
+.filter__btn {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: transparent;
+  color: #e7ecf3;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+.filter__btn:hover { border-color: #fff; }
+.filter__btn[aria-pressed="true"] {
+  background: #fff;
+  border-color: #fff;
+  color: var(--navy);
+  font-weight: 600;
+}
+.filter__btn:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
+/* ---- lot meta row (owner tag, type, price) ---- */
+.lot__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin-top: 4px;
+}
+.owner {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 999px;
+}
+.owner--su { background: #ffe7d4; color: #9a4200; }
+.owner--city { background: #dde6f2; color: #1c3a63; }
+.owner--private { background: #e6e8ec; color: #4b5158; }
+.lot__price { color: var(--muted); font-size: 0.78rem; }
+
+/* ---- crowd badge ---- */
+.lot__crowd { margin-top: 7px; }
+.crowd { font-size: 0.8rem; font-weight: 600; }
+.crowd--none { color: var(--muted); font-weight: 500; }
+
+/* ---- report buttons ---- */
+.reprow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.reprow__label { font-size: 0.78rem; color: var(--muted); margin-right: 2px; }
+.rep {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 3px 11px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.rep:hover { border-color: var(--muted); }
+.rep:disabled { opacity: 0.5; cursor: default; }
+.rep--open:hover { background: #e7f4e8; border-color: #2e7d32; color: #2e7d32; }
+.rep--some:hover { background: #f6ecd9; border-color: var(--amber); color: var(--amber); }
+.rep--full:hover { background: #f7dde0; border-color: var(--red); color: var(--red); }
+
+/* ---- popup extras ---- */
+.pop__owner { color: var(--muted); font-size: 0.82rem; margin-top: 1px; }
+.pop__crowd { font-weight: 600; font-size: 0.85rem; margin-top: 3px; }

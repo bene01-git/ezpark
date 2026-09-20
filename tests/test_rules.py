@@ -79,6 +79,17 @@ def test_non_restricted_lot_unaffected_by_event(data):
     assert result.status is Status.OPEN
 
 
+def test_downtown_private_garage_open_to_visitor(data):
+    lot = _lot(data, "franklin_st_garage")
+    result = evaluate_lot(lot, "visitor", WEEKDAY_MORNING, data["events"])
+    assert result.status is Status.OPEN
+
+
+def test_downtown_lots_are_non_su(data):
+    downtown = [l for l in data["lots"] if l["owner"] != "su"]
+    assert len(downtown) >= 4  # street + several garages
+
+
 def test_street_parking_open(data):
     lot = _lot(data, "marshall_st_street")
     result = evaluate_lot(lot, "visitor", WEEKDAY_MORNING, data["events"])

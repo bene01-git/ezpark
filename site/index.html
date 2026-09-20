@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SU EZPark</title>
-  <meta name="description" content="A rules-based tool for whether you can park in Syracuse University lots and garages right now, based on your permit, the time, and Dome events." />
+  <title>Syracuse EZPark</title>
+  <meta name="description" content="A rules-based tool for whether you can park in Syracuse University and adjacent lots and garages right now, based on your permit, the time, and JMA Wireless Dome events." />
 
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"
@@ -18,13 +18,18 @@
 <body>
   <header class="bar">
     <div class="bar__head">
-      <h1 class="bar__title">SU EZPark</h1>
+      <h1 class="bar__title">Syracuse EZPark</h1>
       <time id="clock" class="bar__clock" aria-live="polite">—</time>
     </div>
 
     <div class="permit" role="group" aria-label="Choose your permit type">
       <span class="permit__label">I have a</span>
       <div id="permit-picker" class="permit__options"></div>
+    </div>
+
+    <div class="permit" role="group" aria-label="Filter by owner">
+      <span class="permit__label">Show</span>
+      <div id="owner-filter" class="permit__options"></div>
     </div>
 
     <p id="tally" class="tally">Loading parking data…</p>
@@ -52,6 +57,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

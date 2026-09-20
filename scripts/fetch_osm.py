@@ -22,9 +22,10 @@ OUT_PATH = DATA_DIR / "osm_parking.geojson"
 
 OVERPASS_URL = "https://overpass-api.de/api/interpreter"
 
-# Bounding box around Syracuse University main + south campus:
+# Bounding box covering SU main + south campus AND downtown Syracuse, so the
+# fetch also pulls city and private garages (all tagged amenity=parking).
 # (south, west, north, east)
-BBOX = (43.018, -76.150, 43.048, -76.118)
+BBOX = (43.018, -76.165, 43.058, -76.118)
 
 QUERY = f"""
 [out:json][timeout:60];

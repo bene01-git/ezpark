@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-19T17:33:40.840055+00:00",
-  "source": "https://parking.syr.edu",
+  "generated_at": "2026-09-20T14:44:21.833777+00:00",
+  "source": "https://parking.syr.edu and https://downtownsyracuse.com/parking",
   "permits": [
     {
       "id": "visitor",
@@ -29,6 +29,7 @@
       "name": "University Ave Garage",
       "type": "garage",
       "category": "public",
+      "owner": "su",
       "lat": 43.04,
       "lon": -76.136,
       "permits": [
@@ -38,7 +39,7 @@
       ],
       "public_hourly": true,
       "dome_restricted": false,
-      "notes": "Open to the public for hourly parking. Honored for permits and used as the event-day fallback lot.",
+      "notes": "Open to the public for hourly parking; event-day fallback lot.",
       "sold_out": false
     },
     {
@@ -46,6 +47,7 @@
       "name": "Adams Street Garage",
       "type": "garage",
       "category": "permit",
+      "owner": "su",
       "lat": 43.0405,
       "lon": -76.133,
       "permits": [
@@ -62,6 +64,7 @@
       "name": "Irving Ave Garage",
       "type": "garage",
       "category": "permit",
+      "owner": "su",
       "lat": 43.041,
       "lon": -76.1345,
       "permits": [
@@ -70,7 +73,7 @@
       ],
       "public_hourly": false,
       "dome_restricted": false,
-      "notes": "Available to graduate students (except first-year Law) and faculty/staff.",
+      "notes": "Graduate students (except first-year Law) and faculty/staff.",
       "sold_out": false
     },
     {
@@ -78,6 +81,7 @@
       "name": "Lawrinson Garage",
       "type": "garage",
       "category": "permit",
+      "owner": "su",
       "lat": 43.038,
       "lon": -76.14,
       "permits": [
@@ -93,19 +97,21 @@
       "name": "College Place Lot",
       "type": "surface",
       "category": "orange",
+      "owner": "su",
       "lat": 43.0415,
       "lon": -76.137,
       "permits": [],
       "orange_after": "16:30",
       "dome_restricted": true,
-      "notes": "Closest Orange lot to main campus. Any valid permit after 4:30 p.m. weekdays / weekends.",
+      "notes": "Closest Orange lot to main campus.",
       "sold_out": false
     },
     {
       "id": "harrison_lot",
-      "name": "Harrison St Lot",
+      "name": "Harrison St Lot (campus)",
       "type": "surface",
       "category": "orange",
+      "owner": "su",
       "lat": 43.0395,
       "lon": -76.132,
       "permits": [
@@ -113,7 +119,7 @@
       ],
       "orange_after": "16:30",
       "dome_restricted": false,
-      "notes": "Commuter permit lot; Orange access after 4:30 p.m. weekdays / weekends.",
+      "notes": "Commuter permit lot; Orange access after 4:30 p.m.",
       "sold_out": false
     },
     {
@@ -121,6 +127,7 @@
       "name": "Henry St Lot",
       "type": "surface",
       "category": "orange",
+      "owner": "su",
       "lat": 43.0388,
       "lon": -76.1315,
       "permits": [
@@ -128,7 +135,7 @@
       ],
       "orange_after": "16:30",
       "dome_restricted": false,
-      "notes": "Commuter permit lot; Orange access after 4:30 p.m. weekdays / weekends.",
+      "notes": "Commuter permit lot; Orange access after 4:30 p.m.",
       "sold_out": false
     },
     {
@@ -136,6 +143,7 @@
       "name": "Comstock Ave Lot",
       "type": "surface",
       "category": "orange",
+      "owner": "su",
       "lat": 43.032,
       "lon": -76.13,
       "permits": [
@@ -144,7 +152,7 @@
       ],
       "orange_after": "16:30",
       "dome_restricted": false,
-      "notes": "John A. Lally Athletics Complex (South). Shuttle to main campus.",
+      "notes": "Lally Complex (South). Shuttle to main campus.",
       "sold_out": false
     },
     {
@@ -152,6 +160,7 @@
       "name": "Colvin Street Lot",
       "type": "surface",
       "category": "orange",
+      "owner": "su",
       "lat": 43.03,
       "lon": -76.131,
       "permits": [
@@ -160,7 +169,7 @@
       ],
       "orange_after": "16:30",
       "dome_restricted": false,
-      "notes": "John A. Lally Athletics Complex (South). Shuttle to main campus.",
+      "notes": "Lally Complex (South). Shuttle to main campus.",
       "sold_out": false
     },
     {
@@ -168,6 +177,7 @@
       "name": "Raynor Ave Lot",
       "type": "surface",
       "category": "orange",
+      "owner": "su",
       "lat": 43.0378,
       "lon": -76.129,
       "permits": [],
@@ -181,6 +191,7 @@
       "name": "Standart West Lot",
       "type": "surface",
       "category": "orange",
+      "owner": "su",
       "lat": 43.037,
       "lon": -76.1285,
       "permits": [],
@@ -194,6 +205,7 @@
       "name": "Women's Building North Lot",
       "type": "surface",
       "category": "orange",
+      "owner": "su",
       "lat": 43.043,
       "lon": -76.1385,
       "permits": [],
@@ -207,6 +219,7 @@
       "name": "Women's Building South Lot",
       "type": "surface",
       "category": "orange",
+      "owner": "su",
       "lat": 43.0425,
       "lon": -76.1388,
       "permits": [],
@@ -220,6 +233,7 @@
       "name": "Irving Ave Hill Lot",
       "type": "surface",
       "category": "orange",
+      "owner": "su",
       "lat": 43.042,
       "lon": -76.134,
       "permits": [],
@@ -233,6 +247,7 @@
       "name": "Skytop Lot",
       "type": "surface",
       "category": "permit",
+      "owner": "su",
       "lat": 43.0245,
       "lon": -76.124,
       "permits": [
@@ -243,7 +258,7 @@
       ],
       "public_hourly": false,
       "dome_restricted": false,
-      "notes": "Large South Campus lot. Free campus shuttle to main campus (~20 min).",
+      "notes": "Large South Campus lot; free shuttle to main campus.",
       "sold_out": false
     },
     {
@@ -251,11 +266,94 @@
       "name": "Marshall St / University Ave (street)",
       "type": "street",
       "category": "street",
+      "owner": "city",
       "lat": 43.04,
       "lon": -76.1372,
       "permits": [],
       "dome_restricted": false,
-      "notes": "Metered city street parking. Pay until 6:00 p.m.; winter odd/even rules Nov 1 - Apr 1.",
+      "price": "$1/hr, enforced 8am-6pm",
+      "notes": "Metered city street parking; winter odd/even Nov 1 - Apr 1.",
+      "sold_out": false
+    },
+    {
+      "id": "washington_st_garage",
+      "name": "Washington Street Garage",
+      "type": "garage",
+      "category": "public",
+      "owner": "city",
+      "lat": 43.05,
+      "lon": -76.1495,
+      "permits": [],
+      "public_hourly": true,
+      "dome_restricted": false,
+      "price": "~$1/hr short-term; daily max",
+      "reservable": false,
+      "notes": "City-run downtown garage.",
+      "sold_out": false
+    },
+    {
+      "id": "harrison_st_garage_downtown",
+      "name": "Harrison Street Garage (Downtown)",
+      "type": "garage",
+      "category": "public",
+      "owner": "city",
+      "lat": 43.047,
+      "lon": -76.147,
+      "permits": [],
+      "public_hourly": true,
+      "dome_restricted": false,
+      "price": "~$1/hr short-term; event rates apply",
+      "reservable": false,
+      "notes": "Near the Oncenter / War Memorial.",
+      "sold_out": false
+    },
+    {
+      "id": "marriott_syracuse_garage",
+      "name": "Marriott Syracuse Downtown Garage",
+      "type": "garage",
+      "category": "public",
+      "owner": "private",
+      "lat": 43.0482,
+      "lon": -76.15,
+      "permits": [],
+      "public_hourly": true,
+      "dome_restricted": false,
+      "price": "Varies; daily & event",
+      "reservable": true,
+      "url": "https://www.syracuseparkingservices.com/locations",
+      "notes": "Attended/gated; pay-by-app available.",
+      "sold_out": false
+    },
+    {
+      "id": "franklin_st_garage",
+      "name": "Franklin Street Garage",
+      "type": "garage",
+      "category": "public",
+      "owner": "private",
+      "lat": 43.049,
+      "lon": -76.1535,
+      "permits": [],
+      "public_hourly": true,
+      "dome_restricted": false,
+      "price": "Monthly + daily pay-by-app",
+      "reservable": false,
+      "notes": "247 S Franklin St area.",
+      "sold_out": false
+    },
+    {
+      "id": "clinton_st_event_lot",
+      "name": "S Clinton St Event Lot",
+      "type": "surface",
+      "category": "public",
+      "owner": "private",
+      "lat": 43.0465,
+      "lon": -76.152,
+      "permits": [],
+      "public_hourly": true,
+      "dome_restricted": false,
+      "price": "Event pricing",
+      "reservable": false,
+      "notes": "Landmark/event parking; opens ~2 hrs before show time.",
       "sold_out": false
     }
   ],
