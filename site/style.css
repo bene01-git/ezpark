@@ -301,3 +301,29 @@ body {
 /* ---- popup extras ---- */
 .pop__owner { color: var(--muted); font-size: 0.82rem; margin-top: 1px; }
 .pop__crowd { font-weight: 600; font-size: 0.85rem; margin-top: 3px; }
+
+/* ---- open/closed coloring (overrides the earlier permit-based scheme) ---- */
+.dot--open { background: #2e7d32; }
+.dot--closed { background: #a5232c; }
+.dot--user { background: #1a73e8; }
+
+.lot--oc-open { border-left-color: #2e7d32; }
+.lot--oc-closed { border-left-color: #a5232c; }
+
+.lot__status--oc-open { background: #e7f4e8; color: #1e6023; }
+.lot__status--oc-closed { background: #f7dde0; color: #7c1a20; }
+
+/* ---- locate-me control button on the map ---- */
+.locate-btn {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  padding: 7px 11px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+.locate-btn:hover { background: #f2f3f5; }

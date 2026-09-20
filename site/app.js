@@ -18,14 +18,13 @@ const STATUS = {
   CLOSED: { key: "closed", label: "Not available to you" },
 };
 
-const STATUS_COLOR = {
-  open: "#f76900", permit_only: "#b06a12",
-  restricted: "#a5232c", closed: "#7b828c",
-};
-
 const OWNER_LABEL = { su: "Syracuse University", city: "City", private: "Private" };
 const CROWD_LABEL = { full: "Reported full", some: "Some spots", open: "Reported open" };
 const CROWD_COLOR = { full: "#a5232c", some: "#b06a12", open: "#2e7d32" };
+
+// Dots and list are coloured by whether you can park here right now (open =
+// green) or not (closed = red), regardless of the reason.
+const OC_COLOR = { open: "#2e7d32", closed: "#a5232c" };
 
 const state = {
   data: null,
@@ -34,6 +33,7 @@ const state = {
   map: null,
   markers: new Map(),
   reports: new Map(), // lot_id -> { status, count, latestMinAgo }
+  userMarker: null,
 };
 
 /* ---- rules engine (mirror of parking/rules.py) ---- */
@@ -194,8 +194,7 @@ function buildOwnerFilter() {
 
 function buildLegend() {
   document.getElementById("legend").innerHTML = [
-    ["open", "Open to you"], ["permit_only", "Permit needed"],
-    ["restricted", "Event restricted"], ["closed", "Not for your permit"],
+    ["open", "Open now"], ["closed", "Closed now"], ["user", "Your location"],
   ].map(([k, l]) => `<span><i class="dot dot--${k}"></i>${l}</span>`).join("");
 }
 
@@ -217,11 +216,50 @@ function reportButtons(lotId) {
   return `<div class="reprow"><span class="reprow__label">Is it full?</span>${buttons}</div>`;
 }
 
+function locateUser() {
+  if (!navigator.geolocation) {
+    alert("Your browser doesn't support location.");
+    return;
+  }
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      const { latitude, longitude } = pos.coords;
+      if (state.userMarker) {
+        state.userMarker.setLatLng([latitude, longitude]);
+      } else {
+        state.userMarker = L.circleMarker([latitude, longitude], {
+          radius: 8, weight: 3, color: "#ffffff", fillColor: "#1a73e8", fillOpacity: 1,
+        }).addTo(state.map).bindPopup("You are here");
+      }
+      state.map.setView([latitude, longitude], 15);
+      state.userMarker.openPopup();
+    },
+    (err) => alert("Couldn't get your location: " + err.message),
+    { enableHighAccuracy: true, timeout: 10000 }
+  );
+}
+
+function addLocateControl() {
+  const Ctrl = L.Control.extend({
+    options: { position: "topright" },
+    onAdd() {
+      const btn = L.DomUtil.create("button", "locate-btn");
+      btn.type = "button";
+      btn.textContent = "Locate me";
+      btn.title = "Show my location on the map";
+      L.DomEvent.on(btn, "click", (e) => { L.DomEvent.stop(e); locateUser(); });
+      return btn;
+    },
+  });
+  state.map.addControl(new Ctrl());
+}
+
 function initMap() {
   state.map = L.map("map", { scrollWheelZoom: true }).setView([43.043, -76.142], 13);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19, attribution: "&copy; OpenStreetMap contributors",
   }).addTo(state.map);
+  addLocateControl();
 }
 
 function visibleLots() {
@@ -255,13 +293,14 @@ function render() {
   for (const { lot, result } of evaluated) {
     if (result.key === "open") openCount += 1;
     const agg = state.reports.get(lot.id) || null;
+    const oc = result.key === "open" ? "open" : "closed";
 
     const li = document.createElement("li");
-    li.className = `lot lot--${result.key}`;
+    li.className = `lot lot--oc-${oc}`;
     li.innerHTML = `
       <div class="lot__top">
         <span class="lot__name">${lot.name}</span>
-        <span class="lot__status lot__status--${result.key}">${result.label}</span>
+        <span class="lot__status lot__status--oc-${oc}">${result.label}</span>
       </div>
       <div class="lot__meta">
         <span class="owner owner--${lot.owner}">${OWNER_LABEL[lot.owner] || lot.owner}</span>
@@ -295,7 +334,7 @@ function render() {
       state.markers.set(lot.id, marker);
     }
     marker.setStyle({
-      fillColor: STATUS_COLOR[result.key],
+      fillColor: OC_COLOR[oc],
       color: lot.owner === "su" ? "#ffffff" : "#0a2240", // non-SU get a navy ring
     });
     const crowdLine = CROWD_ENABLED && agg
@@ -303,7 +342,7 @@ function render() {
     marker.bindPopup(
       `<div class="pop__name">${lot.name}</div>
        <div class="pop__owner">${OWNER_LABEL[lot.owner] || lot.owner}${lot.price ? " &middot; " + lot.price : ""}</div>
-       <div class="pop__status" style="color:${STATUS_COLOR[result.key]}">${result.label}</div>
+       <div class="pop__status" style="color:${OC_COLOR[oc]}">${result.label}</div>
        <div class="pop__reason">${result.reason}</div>${crowdLine}`
     );
     if (!state.map.hasLayer(marker)) marker.addTo(state.map);
